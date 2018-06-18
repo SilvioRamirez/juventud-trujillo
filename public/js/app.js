@@ -54,15 +54,7 @@ new Vue({
             axios.get(urlMunicipios).then( response => {
                 this.municipios = response.data
             });
-        },
-
-        /*getKeeps: function(page){
-            var urlKeeps = 'tasks?page='+page;
-            axios.get(urlKeeps).then(response => {
-                this.keeps = response.data.tasks.data,
-                this.pagination = response.data.pagination
-            });
-        },*/
+        },       
 
     	editFamiliar: function(){
             this.getMunicipios();
@@ -146,7 +138,6 @@ new Vue({
     	}
     }
 });
-
 
 function t_familiars(){
     cedula = $('#cedula').val();
@@ -302,13 +293,3 @@ $(document).ready(function(){
     });
 
 });
-
-/*
-function getBanco(){
-    var html_code= '';
-    html_code += '<option value="">- - - Seleccione - - - </option>';
-    $.each(bank, function(key, value){
-        html_code += '<option value="'+value.banco+'">'+value.banco+'</option>';
-    });
-    $('#banco').html(html_code);
-}*/

@@ -28,6 +28,7 @@ Route::get('/personas/search', 'PersonaController@searchPersona')->name('persona
 Route::get('/personas', 'PersonaController@index')->name('personas.index');
 Route::post('/personas', 'PersonaController@update')->name('personas.update');
 Route::post('/personas', 'PersonaController@store')->name('personas.store');
+Route::get('/personas/list', 'PersonaController@list');
 
 Route::get('/familiars/list/{cedula}', 'FamiliarController@getFamiliars')->name('datatable.familiars');
 Route::post('/familiars/store/', 'FamiliarController@store')->name('familiars.store');
@@ -40,3 +41,4 @@ Route::get('/import/bancos', 'ImportController@importBancos');
 Route::get('/parroquias/{id_municipio}', 'ParroquiaController@getParroquias');
 
 Route::get('/municipios', 'MunicipioController@getMunicipios');
+

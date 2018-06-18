@@ -18,7 +18,7 @@
                     <a class="nav-link" href="{{ url('/personas/search') }}">Carnet</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Listados</a>
+                    <a class="nav-link" href="{{ url('/personas/list') }}">Listado</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/users') }}">Ayuda</a>

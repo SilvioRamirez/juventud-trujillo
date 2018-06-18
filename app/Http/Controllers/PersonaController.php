@@ -45,14 +45,17 @@ class PersonaController extends Controller
             $error='Cedula no encontrada.';
             return view('personas.error', compact('error', 'cedula'));
         }
-
-        
-
-
         /*$personas = Persona::orderBy('id', 'DESC')
             ->cedula($cedula)
             ->paginate(4);
         return view('personas.index', compact('personas'));*/
+    }
+
+    public function list()
+    {
+        $personas = Persona::all();
+
+        return view('personas.list', compact('personas'));
     }
 
     public function searchPersona(){

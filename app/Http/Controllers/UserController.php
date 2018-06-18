@@ -12,6 +12,7 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +22,7 @@ class UserController extends Controller
     {
         return view('users.index');
     }
-
+    
     public function getUsers()
     {
         $users = User::select(['id','name','cedula','telefono','email']);
