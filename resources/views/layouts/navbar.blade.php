@@ -21,7 +21,10 @@
                     <a class="nav-link" href="{{ url('/personas/list') }}">Listado</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/users') }}">Ayuda</a>
+                    <a class="nav-link" href="{{ url('/users/') }}">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/help') }}">Ayuda</a>
                 </li>
             @endguest
         </ul>

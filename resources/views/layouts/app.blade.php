@@ -48,6 +48,7 @@
     <script src="{{asset('js/vue2-datatable-component.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/jspdf.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/set.defaults.js')}}" type="text/javascript"></script>
     @yield('script')
 </body>
 </html>

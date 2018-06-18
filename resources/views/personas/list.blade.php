@@ -10,6 +10,21 @@
 	@include('personas.fragment.success')
 	
 	<hr>
+
+	<table id="t_personas" class="table table-hover" >
+		<thead>
+			<tr>
+				<th>Nombres</th>
+				<th>Cedula</th>
+				<th>Telefono_1</th>
+				<th>Telefono_2</th>
+				<th>Municipio</th>
+				<th>Parroquia</th>
+				<th>Fecha de Registro</th>
+			</tr>
+		</thead>
+	</table>
+
 	<div class="flex-center position-ref full-height">
 		<div class="top-right links text-center">				
 

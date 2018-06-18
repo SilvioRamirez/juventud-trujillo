@@ -183,18 +183,6 @@ function familiarsreload(){
     $('#t_familiars').DataTable().ajax.reload();
 }
 
-$.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default, {
-            icons: {
-                time: 'fa fa-clock',
-                date: 'fa fa-calendar',
-                up: 'fa fa-arrow-up',
-                down: 'fa fa-arrow-down',
-                previous: 'fa fa-chevron-left',
-                next: 'fa fa-chevron-right',
-                today: 'fa fa-calendar-check-o',
-                clear: 'fa fa-trash',
-                close: 'fa fa-times'
-            } });
 $(document).ready(function(){
 
     $('#btn-print-carnet').click(function(){
@@ -247,21 +235,7 @@ $(document).ready(function(){
         var cod = $(this).find('option:selected').attr('value');
         $('#cuenta').val(cod);
     });
-
-
-    oTable = $('#users').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "/users/list",
-        columns: [
-            { data: 'id', name: 'id' },
-            { data: 'name', name: 'name' },
-            { data: 'cedula', name: 'cedula' },
-            { data: 'telefono', name: 'telefono' },
-            { data: 'email', name: 'email' },
-        ]
-    });
-
+    
     $('.cedula').mask('S0000000000', {
         'translation': {
             S: {pattern: /[vepjgrcVEPJGRC]/},
