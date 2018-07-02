@@ -13,3 +13,4 @@ Desarrollado con el Framework Laravel 5.6
 - webpatser/laravel-uuid 3.0
 - yajra/laravel-datatables-buttons 3.0
 - yajra/laravel-datatables-oracle 8.0# juventud-trujillo
+# juventud-trujillo
