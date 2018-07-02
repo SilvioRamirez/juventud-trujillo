@@ -105,6 +105,9 @@ return [
     */
 
     'attributes' => [
+        'name'   => 'Nombres y Apellidos',
+        'email' => 'Correo',
+        'password' => 'Contraseña',
         'nombres'   => 'Nombres',
         'apellidos' => 'Apellidos',
         'cedula'    => 'Cedula',

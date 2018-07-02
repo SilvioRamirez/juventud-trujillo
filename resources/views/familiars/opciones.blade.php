@@ -8,9 +8,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				
 				<h2 class="text-center" id="title-opciones-familiar"></h2>
-				
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-info" v-on:click.prevent="editFamiliar()"><i class="fa fa-edit"></i> Editar</button>
@@ -19,5 +17,4 @@
 		    </div>
 		</div>
 	</div>
-
 </div>

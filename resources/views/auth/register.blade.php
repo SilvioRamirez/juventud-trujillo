@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -29,7 +29,7 @@
                             <label for="cedula" class="col-md-4 col-form-label text-md-right">{{ __('Cedula') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cedula" type="text" class="form-control{{ $errors->has('cedula') ? ' is-invalid' : '' }}" name="cedula" value="{{ old('cedula') }}" required autofocus>
+                                <input id="cedula" type="text" class="cedula form-control{{ $errors->has('cedula') ? ' is-invalid' : '' }}" name="cedula" value="{{ old('cedula') }}" required autofocus>
 
                                 @if ($errors->has('cedula'))
                                     <span class="invalid-feedback">
@@ -43,11 +43,31 @@
                             <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
 
                             <div class="col-md-6">
-                                <input id="telefono" type="text" class="form-control{{ $errors->has('telefono') ? ' is-invalid' : '' }}" name="telefono" value="{{ old('telefono') }}" required autofocus>
+                                <input id="telefono" type="text" class="telefono form-control{{ $errors->has('telefono') ? ' is-invalid' : '' }}" name="telefono" value="{{ old('telefono') }}" required autofocus>
 
                                 @if ($errors->has('telefono'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('telefono') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="municipio" class="col-md-4 col-form-label text-md-right">{{ __('Municipio') }}</label>
+
+                            <div class="col-md-6">                                
+                                <select name="municipio" id="municipio" class="form-control{{ $errors->has('municipio') ? ' is-invalid' : '' }}" placeholder="Seleccionar" required>
+                                    @foreach($municipios as $municipio)
+                                        <option value="{{ $municipio->municipio }}">
+                                            {{ $municipio->municipio}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('municipio'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('municipio') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -102,4 +122,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

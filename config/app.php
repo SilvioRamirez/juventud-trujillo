@@ -164,6 +164,7 @@ return [
         Yajra\DataTables\ButtonsServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Caffeinated\Shinobi\ShinobiServiceProvider::class,
 
     ],
 

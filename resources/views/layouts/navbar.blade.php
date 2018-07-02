@@ -6,23 +6,36 @@
 
     <div class="collapse navbar-collapse" id="navbarColor03">
         <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('/home') }}">Inicio <span class="sr-only">(current)</span></a>
+                </li>
             @guest
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/home') }}">Inicio <span class="sr-only">(current)</span></a>
-                </li>
+                
             @else
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/home') }}">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/personas/search') }}">Carnet</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/personas/list') }}">Listado</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/users/') }}">Usuarios</a>
-                </li>
+
+                @can('personas.search')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/personas/search') }}">Carnetización</a>
+                    </li>
+                @endcan
+
+                @can('personas.index')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/personas/list') }}">Listado</a>
+                    </li>
+                @endcan
+                
+                @can('users.index')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('users.index') }}">Usuarios</a>
+                    </li>
+                @endcan
+
+                @can('roles.index')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('roles.index') }}">Roles</a>
+                    </li>
+                @endcan
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/help') }}">Ayuda</a>
                 </li>
@@ -32,7 +45,7 @@
         <ul class="navbar-nav ml-auto">
             @guest
                 <li><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> {{ __('Iniciar Sesión') }}</a></li>
-                <li><a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> {{ __('Registrarse') }}</a></li>
+                {{-- <li><a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> {{ __('Registrarse') }}</a></li> --}}
             @else
                 <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

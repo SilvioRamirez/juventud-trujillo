@@ -1,11 +1,12 @@
 <?php
 
 namespace App;
-
+use Caffeinated\Shinobi\Traits\ShinobiTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Persona extends Model
 {
+    use ShinobiTrait;
     ////Scope
 	/*public function scopeNombres($query, $nombres)
 	{

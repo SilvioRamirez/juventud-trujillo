@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Municipio;
 use Caffeinated\Shinobi\Models\Role;
-use Illuminate\Http\Request;
+use Caffeinated\Shinobi\Models\Permission;
 use Yajra\Datatables\Datatables;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 
-class UserController extends Controller
+class RoleController extends Controller
 {
     public function __construct()
     {
@@ -23,14 +21,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index');
+        return view('roles.index');
     }
     
-    public function getUsers()
+    public function getRoles()
     {
-        $users = User::select(['id','name','cedula','telefono','municipio','email']);
+        $roles = Role::select(['id','name','slug','description']);
         
-        return Datatables::of($users)->make(true);
+        return Datatables::of($roles)->make(true);
     }
 
     /**
@@ -40,8 +38,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $municipios = Municipio::pluck('municipio', 'municipio');
-        return view('users.create', compact('municipios'));
+        $permissions = Permission::get();
+        return view('roles.create', compact('permissions'));
     }
 
     /**
@@ -53,22 +51,18 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'      => 'required|string|max:255',
-            'cedula'    => 'required|string|min:5|max:15|unique:users',
-            'telefono'  => 'required|string|min:12|max:12',
-            'municipio' => 'required',
-            'email'     => 'required|string|email|max:255|unique:users',
-            'password'  => 'required|string|min:6|confirmed',
+            'name'          => 'required',
+            'slug'          => 'required',
+            'description'   => 'required',
         ]);        
 
-        User::create([
-            'name'      => $request->name,
-            'cedula'    => $request->cedula,
-            'telefono'  => $request->telefono,
-            'municipio'  => $request->municipio,
-            'email'     => $request->email,
-            'password'  => Hash::make($request->password)
+        $role = Role::create([
+            'name'          => $request->name,
+            'slug'          => $request->slug,
+            'description'   => $request->description
         ]);
+
+        $role->permissions()->sync($request->get('permissions'));
 
         return back()->with('success', 'Se han registrado los datos de '.$request->name.'.');
     }
@@ -92,16 +86,15 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        $roles = Role::get();
-        $municipios = Municipio::pluck('municipio', 'municipio');
-        return view('users.edit', compact('user', 'municipios', 'roles'));
+        $role = Role::find($id);
+        $permissions = Permission::get();
+        return view('roles.edit', compact('role', 'permissions'));
     }
 
     public function delete($id)
     {
-        $user = User::find($id);
-        return view('users.delete', compact('user'));
+        $role = Role::find($id);
+        return view('roles.delete', compact('role'));
     }
 
     /**
@@ -113,12 +106,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->update($request->all());
+        $role = Role::find($id);
+        $role->update($request->all());
 
-        $user->roles()->sync($request->get('roles'));
+        //Actualiza los permisos relacionados
+        $role->permissions()->sync($request->get('permissions'));
 
-        return redirect()->route('users.edit', $user->id)->with('info', 'Usuario actualizado con éxito');
+        return redirect()->route('roles.edit', $role->id)->with('info', 'Rol actualizado con éxito');
     }
 
     /**
@@ -130,10 +124,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         if ($id != 1) {
-            $user = User::find($id);
-            $user->delete();
-            //return view('users.index')->with('success', 'Se han eliminado los datos de '.$user->name.'.');
-            return redirect()->route('users.index');
+            $role = Role::find($id);
+            $role->delete();
+            return redirect()->route('roles.index');
         }else{
             return back()->with('error', 'No se puede eliminar a este usuario.');
         } 

@@ -59,5 +59,10 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+
+
+        //llamamalos los middleware o archivos intermedios del shinobi para ver los roles y permisos de acceso en las rutas
+        'role'          => \Caffeinated\Shinobi\Middleware\UserHasRole::class,
+        'permission'    => \Caffeinated\Shinobi\Middleware\UserHasPermission::class,
     ];
 }

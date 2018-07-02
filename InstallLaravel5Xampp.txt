@@ -1,0 +1,54 @@
+Como instalar en Windows
+Requerimientos
+	PHP >= 7.0.1
+	OpenSSL PHP Extension
+	PDO PHP Extension
+	Mbstring PHP Extension
+	Tokenizer PHP Extension
+
+Instalar Xamp
+	Primero que todo, necesitas el XAMPP, lo descargar e instalar.
+
+Composer
+	Despúes de que hayas descargado e instalado el XAMPP, descargar e instalar Composer.
+
+Xampp Virtual Host
+	Configuramos un Virtual Host en XAMPP para el proyecto de Laravel, en este caso configuramos el dominio jpsuvtrujillo.com.ve
+
+	Editamos el archivo httpd-vhosts.conf que se encuentra en C:\xampp\apache\conf\extra\httpd-vhosts.conf y al final del documento colocamos lo siguiente:
+
+# VirtualHost for jpsuvtrujillo.com.ve
+
+<VirtualHost jpsuvtrujillo.com.ve:80>
+  DocumentRoot "C:\xampp\htdocs\jpsuvtrujillo\public"
+  ServerAdmin jpsuvtrujillo.com.ve
+  <Directory "C:\xampp\htdocs\jpsuvtrujillo">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+  </Directory>
+</VirtualHost>
+
+Después de esto, nuestro servidor apache permitira la conexion a la direccion jpsuvtrujillo.com.ve, pero debemos configurar nuestro archivo host de windows que nos permite acceder a jpsuvtrujillo.com.ve acceder, este archivo se encuentra en C:\Windows\System32\drivers\etc\host
+
+IMPORTANTE: Para editar este archivo debemos ejecutar SublimeTex o Bloc de Notas con permisos de administrador.
+
+Edita el archivo host y agrega al final de estas lineas nuestro servidor para jpsuvtrujillo.com.ve :
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+127.0.0.1	jpsuvtrujillo.com.ve
+
+Copia la carpeta jpsuvtrujillo a C:\xampp\htdocs
+
+Install Laravel Framework
+	We are prepared to install and configure a Laravel Framework. First of all, we have to navigate to htdocs folder to install it and run this following command:
+
+	composer create-project laravel/laravel laravel "5.1.*"
+
+	$ composer install
+	$ php artisan key:generate
+	$ php artisan migrate
+	$ php artisan db:seed

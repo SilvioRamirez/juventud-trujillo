@@ -59,7 +59,8 @@ class PersonaController extends Controller
 
     public function create()
     {
-        //
+        $municipios = Municipio::pluck('municipio', 'municipio');
+        return view('personas.create', compact('municipios'));
     }
     
     public function store(PersonaRequest $request)
