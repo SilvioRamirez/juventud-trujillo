@@ -115,6 +115,8 @@ class PersonaController extends Controller
             $persona->ocupacion         = $request->ocupacion;
             $persona->potencialidad     = $request->potencialidad;
             $persona->terreno           = $request->terreno;
+            $persona->terreno_cantidad  = $request->terreno_cantidad;
+            $persona->terreno_medida    = $request->terreno_medida;
             $persona->votantes_centro   = $request->votantes_centro;
             $persona->votantes_centro_descripcion   = $request->votantes_centro_descripcion;
             $persona->conoce_centro                 = $request->conoce_centro;
@@ -202,6 +204,8 @@ class PersonaController extends Controller
         $persona->ocupacion         = $request->ocupacion;
         $persona->potencialidad     = $request->potencialidad;
         $persona->terreno           = $request->terreno;
+        $persona->terreno_cantidad           = $request->terreno_cantidad;
+        $persona->terreno_medida           = $request->terreno_medida;
         $persona->votantes_centro   = $request->votantes_centro;
         $persona->votantes_centro_descripcion   = $request->votantes_centro_descripcion;
         $persona->conoce_centro                 = $request->conoce_centro;

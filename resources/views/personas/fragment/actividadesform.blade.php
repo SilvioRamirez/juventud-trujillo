@@ -38,10 +38,6 @@
 			{!! Form::text('cultura_descripcion', $persona->cultura_descripcion, ['class' => 'form-control form-control-sm', ]) !!}
 			</div>			
 		</div>
-	</div>
-
-	{{-- Col 2 --}}
-	<div class="col-md-6">
 		<div class="form-group row">
 			{!! Html::decode(Form::label('grado_instruccion', '<strong>Grado instrucción:</strong>', ['class' => 'col-sm-6 col-form-label col-form-label-sm'])) !!}
 			<div class="col-sm-6">
@@ -72,6 +68,11 @@
 			{!! Form::text('carrera', $persona->carrera, ['class' => 'form-control form-control-sm', ]) !!}
 			</div>			
 		</div>
+	</div>
+
+	{{-- Col 2 --}}
+	<div class="col-md-6">
+		
 		<div class="form-group row">
 			{!! Html::decode(Form::label('trabajo', '<strong>¿Trabaja?</strong>', ['class' => 'col-sm-6 col-form-label col-form-label-sm'])) !!}
 			<div class="col-sm-6">
@@ -114,7 +115,21 @@
 		<div class="form-group row">
 			{!! Html::decode(Form::label('terreno', '<strong>¿Tiene terreno para sembrar?</strong>', ['class' => 'col-sm-6 col-form-label col-form-label-sm'])) !!}
 			<div class="col-sm-6">
-			{!! Form::text('terreno', $persona->terreno, ['class' => 'form-control form-control-sm', 'placeholder' => '¿Cuanto? 1 Hectarea, 500 M2, 1000 M2' ]) !!}
+			{!! Form::select('terreno', ['No' => 'No', 'Si' => 'Si'], $persona->terreno, ['class' => 'form-control form-control-sm' ]); !!}
+			</div>			
+		</div>
+
+		<div class="form-group row">
+			{!! Html::decode(Form::label('terreno_cantidad', '<strong>Cantidad de Terreno - Medida:</strong>', ['class' => 'col-sm-4 col-form-label col-form-label-sm'])) !!}
+			<div class="col-sm-2">
+			{!! Form::text('terreno_cantidad', $persona->terreno_cantidad, ['class' => 'form-control form-control-sm', 'placeholder' => '1,2,500' ]) !!}
+			</div>
+			<div class="col-sm-6">
+			{!! Form::select('terreno_medida', [
+				'Metros cuadrados (m2)' => 'Metros cuadrados (m2)',
+				'Kilometros cuadrados (km2)' => 'Kilometros cuadrados (km2)',
+				'Hectareas (hm2)' => 'Hectareas (hm2)'
+				], $persona->terreno_medida, ['class' => 'form-control form-control-sm', 'placeholder' => 'Seleccionar']); !!}
 			</div>
 		</div>
 	</div>
