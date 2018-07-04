@@ -112,6 +112,9 @@ class PersonaController extends Controller
             $persona->trabajo           = $request->trabajo;
             $persona->lugar_trabajo     = $request->lugar_trabajo;
             $persona->ingreso_mensual     = $request->ingreso_mensual;
+            $persona->ocupacion         = $request->ocupacion;
+            $persona->potencialidad     = $request->potencialidad;
+            $persona->terreno           = $request->terreno;
             $persona->votantes_centro   = $request->votantes_centro;
             $persona->votantes_centro_descripcion   = $request->votantes_centro_descripcion;
             $persona->conoce_centro                 = $request->conoce_centro;
@@ -170,12 +173,12 @@ class PersonaController extends Controller
         $persona->instagram     = $request->instagram;
         $persona->twitter       = $request->twitter;
         $persona->whatsapp      = $request->whatsapp;
-        $persona->youtube           = $request->youtube;
+        $persona->youtube       = $request->youtube;
         $persona->snapchat      = $request->snapchat;
         $persona->organizacion   = $request->organizacion;
         $persona->responsabilidad   = $request->responsabilidad;
         $persona->estructura        = $request->estructura;
-        $persona->centro_votacion  = $request->centro_votacion;
+        $persona->centro_votacion   = $request->centro_votacion;
         $persona->vocero_comunal    = $request->vocero_comunal;
         $persona->vocero_comunal_descripcion        = $request->vocero_comunal_descripcion;
         $persona->beneficiario_mision               = $request->beneficiario_mision;
@@ -195,7 +198,10 @@ class PersonaController extends Controller
         $persona->carrera           = $request->carrera;
         $persona->trabajo           = $request->trabajo;
         $persona->lugar_trabajo     = $request->lugar_trabajo;
-        $persona->ingreso_mensual     = $request->ingreso_mensual;
+        $persona->ingreso_mensual   = $request->ingreso_mensual;
+        $persona->ocupacion         = $request->ocupacion;
+        $persona->potencialidad     = $request->potencialidad;
+        $persona->terreno           = $request->terreno;
         $persona->votantes_centro   = $request->votantes_centro;
         $persona->votantes_centro_descripcion   = $request->votantes_centro_descripcion;
         $persona->conoce_centro                 = $request->conoce_centro;

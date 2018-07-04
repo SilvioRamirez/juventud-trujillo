@@ -96,6 +96,27 @@
 				], $persona->ingreso_mensual, ['class' => 'form-control form-control-sm', 'placeholder' => 'Seleccionar']); !!}
 			</div>			
 		</div>
+
+		<div class="form-group row">
+			{!! Html::decode(Form::label('ocupacion', '<strong>Ocupación:</strong>', ['class' => 'col-sm-6 col-form-label col-form-label-sm'])) !!}
+			<div class="col-sm-6">
+			{!! Form::text('ocupacion', $persona->ocupacion, ['class' => 'form-control form-control-sm', 'placeholder' => '¿A que se dedica? ¿En que trabaja?' ]) !!}
+			</div>
+		</div>
+
+		<div class="form-group row">
+			{!! Html::decode(Form::label('potencialidad', '<strong>Potencialidades productivas:</strong>', ['class' => 'col-sm-6 col-form-label col-form-label-sm'])) !!}
+			<div class="col-sm-6">
+			{!! Form::text('potencialidad', $persona->potencialidad, ['class' => 'form-control form-control-sm', 'placeholder' => 'Siembra de Platanos, Producción de Harina, etc...']) !!}
+			</div>
+		</div>
+
+		<div class="form-group row">
+			{!! Html::decode(Form::label('terreno', '<strong>¿Tiene terreno para sembrar?</strong>', ['class' => 'col-sm-6 col-form-label col-form-label-sm'])) !!}
+			<div class="col-sm-6">
+			{!! Form::text('terreno', $persona->terreno, ['class' => 'form-control form-control-sm', 'placeholder' => '¿Cuanto? 1 Hectarea, 500 M2, 1000 M2' ]) !!}
+			</div>
+		</div>
 	</div>
 
 </div>

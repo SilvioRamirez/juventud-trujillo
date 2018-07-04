@@ -57,6 +57,9 @@ class CreatePersonasTable extends Migration
             $table->string('trabajo')->nullable();
             $table->string('lugar_trabajo')->nullable();
             $table->string('ingreso_mensual')->nullable();
+            $table->string('ocupacion')->nullable();
+            $table->string('potencialidad')->nullable();
+            $table->string('terreno')->nullable();
             $table->string('votantes_centro')->nullable();
             $table->string('votantes_centro_descripcion')->nullable();
             $table->string('conoce_centro')->nullable();
