@@ -139,6 +139,8 @@ class PersonaController extends Controller
             $persona->qrcode                = $request->qrcode;
             $persona->save();
             return back()->with('success', 'Se han registrado los datos de '.$persona->nombres.'.');
+
+            //archivo modificado
         }
     }
 

@@ -65,7 +65,7 @@ class PersonaRequest extends FormRequest
             'imagen'                        => 'required',
             
             
-            //
+            //archivo modificado
         ];
     }
 }

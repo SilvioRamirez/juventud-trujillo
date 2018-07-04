@@ -15,7 +15,7 @@ class CreatePersonasTable extends Migration
     {
         Schema::create('personas', function (Blueprint $table) {
             $table->increments('id');
-
+//archivo modificado
             $table->string('nombres');
             $table->string('cedula');
             $table->string('f_nacimiento')->nullable();

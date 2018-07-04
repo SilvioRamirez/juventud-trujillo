@@ -131,6 +131,7 @@
 				'Hectareas (hm2)' => 'Hectareas (hm2)'
 				], $persona->terreno_medida, ['class' => 'form-control form-control-sm', 'placeholder' => 'Seleccionar']); !!}
 			</div>
+			{{-- Archivo modificado --}}
 		</div>
 	</div>
 
