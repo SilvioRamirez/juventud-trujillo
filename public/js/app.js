@@ -9,11 +9,6 @@ new Vue({
         newCedula: '',
         newEdad: '',
         newParentezco: '',
-        newInstruccion: '',
-        newMunicipio: '',
-        newParroquia: '',
-        newDireccion: '',
-        newCentroVotacion: '',
         newBeneficiarioMision: '',
     	fillFamiliar: {
             'cedula_persona': cedula = $('#cedulaCarnet').val(),
@@ -22,12 +17,8 @@ new Vue({
             'cedula': '',
             'edad': '',
             'parentezco': '',
-            'instruccion': '',
-            'municipio': '',
-            'parroquia': '',
-            'direccion': '',
-            'centro_votacion': '',
-            'beneficiario_mision': ''},
+            'beneficiario_mision': ''
+        },
     	errors: [],
     	offset: 3,
     },
@@ -66,11 +57,6 @@ new Vue({
             this.fillFamiliar.cedula      = sessionStorage.editCedula;
             this.fillFamiliar.edad        = sessionStorage.editEdad;
             this.fillFamiliar.parentezco  = sessionStorage.editParentezco;
-            this.fillFamiliar.instruccion = sessionStorage.editInstruccion;
-            this.fillFamiliar.municipio    = sessionStorage.editMunicipio;
-            this.fillFamiliar.parroquia    = sessionStorage.editParroquia;
-            this.fillFamiliar.direccion    = sessionStorage.editDireccion;
-            this.fillFamiliar.centro_votacion = sessionStorage.editCentroVotacion;
             this.fillFamiliar.beneficiario_mision = sessionStorage.editBeneficiarioMision;
 
     	},
@@ -85,12 +71,8 @@ new Vue({
                     'cedula': '',
                     'edad': '',
                     'parentezco': '',
-                    'instruccion': '',
-                    'municipio': '',
-                    'parroquia': '',
-                    'direccion': '',
-                    'centro_votacion': '',
-                    'beneficiario_mision': ''},
+                    'beneficiario_mision': ''
+                },
     			this.errors =[];
                 familiarsreload()
     			$('#modal-editar-familiar').modal('hide');
@@ -109,11 +91,6 @@ new Vue({
                 cedula: this.newCedula,
                 edad: this.newEdad,
                 parentezco: this.newParentezco,
-                instruccion: this.newInstruccion,
-                municipio: this.newMunicipio,
-                parroquia: this.newParroquia,
-                direccion: this.newDireccion,
-                centro_votacion: this.newCentroVotacion,
                 beneficiario_mision: this.newBeneficiarioMision,
 
     		}).then(response => {
@@ -122,11 +99,6 @@ new Vue({
                 this.newCedula = '';
                 this.newEdad = '';
                 this.newParentezco = '';
-                this.newInstruccion = '';
-                this.newMunicipio = '';
-                this.newParroquia = '';
-                this.newDireccion = '';
-                this.newCentroVotacion = '';
                 this.newBeneficiarioMision = '';
     			this.errors = []; //deja los errores vacios
     			$('#modal-agregar-familiar').modal('hide');
@@ -152,11 +124,6 @@ function t_familiars(){
             { data: 'cedula' },
             { data: 'edad' },
             { data: 'parentezco'  },
-            { data: 'instruccion' },
-            { data: 'municipio' },
-            { data: 'parroquia' },
-            { data: 'direccion' },
-            { data: 'centro_votacion' },
             { data: 'beneficiario_mision' },
         ],
     });
@@ -170,11 +137,6 @@ function t_familiars(){
         sessionStorage.setItem('editCedula', data['cedula']);
         sessionStorage.setItem('editEdad', data['edad']);
         sessionStorage.setItem('editParentezco', data['parentezco']);
-        sessionStorage.setItem('editInstruccion', data['instruccion']);
-        sessionStorage.setItem('editMunicipio', data['municipio']);
-        sessionStorage.setItem('editParroquia', data['parroquia']);
-        sessionStorage.setItem('editDireccion', data['direccion']);
-        sessionStorage.setItem('editCentroVotacion', data['centro_votacion']);
         sessionStorage.setItem('editBeneficiarioMision', data['beneficiario_mision']);
     });
 }

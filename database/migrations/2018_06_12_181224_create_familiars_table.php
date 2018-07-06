@@ -20,12 +20,7 @@ class CreateFamiliarsTable extends Migration
             $table->string('cedula');
             $table->string('edad')->nullable();
             $table->string('parentezco');
-            $table->string('instruccion');
-            $table->string('municipio')->nullable();
-            $table->string('parroquia')->nullable();
-            $table->text('direccion')->nullable();
-            $table->string('centro_votacion');
-            $table->string('beneficiario_mision');
+            $table->string('beneficiario_mision')->nullable();;
             $table->timestamps();
         });
     }

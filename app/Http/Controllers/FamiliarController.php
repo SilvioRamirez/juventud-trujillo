@@ -24,7 +24,14 @@ class FamiliarController extends Controller
 
     public function getFamiliars($cedula)
     {
-        $familiars = Familiar::select(['id','nombres','cedula','edad', 'parentezco', 'instruccion', 'municipio', 'parroquia', 'direccion', 'centro_votacion', 'beneficiario_mision'])->where('cedula_persona','=', $cedula);
+        $familiars = Familiar::select([
+            'id',
+            'nombres',
+            'cedula',
+            'edad', 
+            'parentezco',
+            'beneficiario_mision'
+        ])->where('cedula_persona','=', $cedula);
         
         return Datatables::of($familiars)->make(true);
     }
@@ -52,13 +59,7 @@ class FamiliarController extends Controller
             'nombres'               => 'required',
             'cedula'                => 'required',
             'edad'                  => 'required',
-            'parentezco'            => 'required',
-            'instruccion'           => 'required',
-            'municipio'             => 'required',
-            'parroquia'             => 'required',
-            'direccion'             => 'required',
-            'centro_votacion'       => 'required',
-            'beneficiario_mision'   => 'required',
+            'parentezco'            => 'required'
         ]);
 
         Familiar::create($request->all());
@@ -102,13 +103,7 @@ class FamiliarController extends Controller
             'nombres'               => 'required',
             'cedula'                => 'required',
             'edad'                  => 'required',
-            'parentezco'            => 'required',
-            'instruccion'          => 'required',
-            'municipio'             => 'required',
-            'parroquia'             => 'required',
-            'direccion'             => 'required',
-            'centro_votacion'       => 'required',
-            'beneficiario_mision'   => 'required',
+            'parentezco'            => 'required'
         ]);
 
         Familiar::find($id)->update($request->all());

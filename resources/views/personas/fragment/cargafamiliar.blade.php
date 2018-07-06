@@ -9,11 +9,6 @@
 				<th>Cedula</th>
 				<th>Edad</th>
 				<th>Parentesco</th>
-				<th>Instrucción</th>
-				<th>Municipio</th>
-				<th>Parroquia</th>
-				<th>Dirección</th>
-				<th>Centro de Votación</th>
 				<th>Beneficiario de Misión</th>
 			</tr>
 		</thead>

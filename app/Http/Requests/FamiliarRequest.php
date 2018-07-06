@@ -27,10 +27,6 @@ class FamiliarRequest extends FormRequest
             'nombres'               => 'required|string|max:255',
             'cedula'                => 'required|string|min:5|max:15',
             'edad'                  => 'required',
-            'parentezco'            => 'required|string|',
-            'municipio'             => 'required|string|max:255',
-            'parroquia'             => 'required|string|max:255',
-            'direccion'             => 'required|string|max:255',
         ];
     }
 }

@@ -40,6 +40,8 @@
 				'Movimiento Nacional por la Vivienda Joven' => 'Movimiento Nacional por la Vivienda Joven',
 				'Sexo Diversidad' 							=> 'Sexo Diversidad',
 				'Militante' 								=> 'Militante',
+				'Poder Popular' 							=> 'Poder Popular',
+				'Comunicacion' 								=> 'Comunicacion',
 				], $persona->responsabilidad, ['class' => 'form-control form-control-sm', 'placeholder' => 'Seleccionar', 'id' => 'responsabilidadCarnet']); !!}
 
 			</div>			

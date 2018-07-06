@@ -53,44 +53,10 @@
 				</div>
 
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label col-form-label-sm" for="instruccion">Instrucción: </label>
-					<select v-model="fillFamiliar.instruccion" class="col-sm-4 form-control form-control-sm" placeholder="Seleccionar">
-						<option value="Ninguno">Ninguno</option>
-						<option value="Basica">Basica</option>	
-						<option value="Bachiller">Bachiller</option>	
-						<option value="Tecnico Medio">Tecnico Medio</option>	
-						<option value="Tecnico Superior Universitario">Tecnico Superior Universitario</option>	
-						<option value="Licenciado">Licenciado</option>	
-						<option value="Ingeniero">Ingeniero</option>	
-						<option value="Especializacion">Especializacion</option>	
-						<option value="Maestria">Maestria</option>	
-						<option value="Doctorado">Doctorado</option>	
-						<option value="Postdoctorado">Postdoctorado</option>
-					</select>
-
 					<label class="col-sm-2 col-form-label col-form-label-sm" for="fillFamiliar.beneficiario_mision">Beneficiario de alguna misión: </label>
 					<input class="col-sm-4 form-control form-control-sm" type="text" name="fillFamiliar.beneficiario_mision" v-model="fillFamiliar.beneficiario_mision">
 				</div>
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label col-form-label-sm" for="municipio">Municipio: </label>
-					<select v-model="fillFamiliar.municipio" v-on:click="getMunicipios()" v-on:change="getParroquias(fillFamiliar.municipio)" class="col-sm-4 form-control form-control-sm" placeholder="Seleccionar">
-						<option v-for="item in municipios" v-bind:value="item.municipio" >
-							@{{ item.municipio}}
-						</option>						
-					</select>
-
-					<label class="col-sm-2 col-form-label col-form-label-sm" for="parroquia">Parroquia: </label>
-					<select v-model="fillFamiliar.parroquia" class="col-sm-4 form-control form-control-sm" placeholder="Seleccionar">
-						<option v-for="item in parroquias" v-bind:value="item.parroquia">@{{ item.parroquia}}</option>
-					</select>
-				</div>
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label col-form-label-sm" for="direccion">Direccion: </label>
-					<input class="col-sm-4 form-control form-control-sm" type="text" name="direccion" v-model="fillFamiliar.direccion">
-
-					<label class="col-sm-2 col-form-label col-form-label-sm" for="centro_votacion">Centro de Votación: </label>
-					<input class="col-sm-4 form-control form-control-sm" type="text" name="centro_votacion" v-model="fillFamiliar.centro_votacion">
-				</div>
+				
 				<div class="form-group row">					
 					<ul>
 						<span class="text-danger"><li v-for="error in errors">@{{ error }}</li></span>
